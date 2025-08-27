@@ -53,7 +53,7 @@ function PureChatHeader({
       <div className="ml-auto flex items-center gap-2">
         <Button variant="ghost" size="sm" className="p-2 h-8 w-8" asChild>
           <a
-            href="https://github.com/franciscomoretti/sparka"
+            href="https://github.com/franciscomoretti/miami.ai"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center"

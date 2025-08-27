@@ -75,7 +75,7 @@ export function getStreamContext() {
     try {
       globalStreamContext = createResumableStreamContext({
         waitUntil: after,
-        keyPrefix: 'sparka-ai:resumable-stream',
+        keyPrefix: 'miami.ai-ai:resumable-stream',
         ...(redisPublisher && redisSubscriber
           ? {
               publisher: redisPublisher,
@@ -425,8 +425,8 @@ export async function POST(request: NextRequest) {
       // Record this new stream so we can resume later - use Redis for all users
       if (redisPublisher) {
         const keyPrefix = isAnonymous
-          ? `sparka-ai:anonymous-stream:${chatId}:${streamId}`
-          : `sparka-ai:stream:${chatId}:${streamId}`;
+          ? `miami.ai-ai:anonymous-stream:${chatId}:${streamId}`
+          : `miami.ai-ai:stream:${chatId}:${streamId}`;
 
         await redisPublisher.setEx(
           keyPrefix,
@@ -630,7 +630,7 @@ export async function POST(request: NextRequest) {
         // Set TTL on Redis keys to auto-expire after 10 minutes
         if (redisPublisher) {
           try {
-            const keyPattern = `sparka-ai:resumable-stream:rs:sentinel:${streamId}*`;
+            const keyPattern = `miami.ai-ai:resumable-stream:rs:sentinel:${streamId}*`;
             const keys = await redisPublisher.keys(keyPattern);
             if (keys.length > 0) {
               // Set 5 minute expiration on all stream-related keys
@@ -647,8 +647,8 @@ export async function POST(request: NextRequest) {
           // Clean up stream info from Redis for all users
           if (redisPublisher) {
             const keyPrefix = isAnonymous
-              ? `sparka-ai:anonymous-stream:${chatId}:${streamId}`
-              : `sparka-ai:stream:${chatId}:${streamId}`;
+              ? `miami.ai-ai:anonymous-stream:${chatId}:${streamId}`
+              : `miami.ai-ai:stream:${chatId}:${streamId}`;
 
             await redisPublisher.expire(keyPrefix, 300);
           }

@@ -1,5 +1,5 @@
 export const siteConfig = {
-  githubUrl: 'https://github.com/franciscomoretti/sparka',
-  appName: 'Sparka AI',
-  appPrefix: 'sparka-ai',
+  githubUrl: 'https://github.com/franciscomoretti/miami.ai',
+  appName: 'Miami.ai AI',
+  appPrefix: 'miami.ai-ai',
 };

@@ -56,8 +56,8 @@ export async function GET(
 
   if (redisPublisher) {
     const keyPattern = isAuthenticated
-      ? `sparka-ai:stream:${chatId}:*`
-      : `sparka-ai:anonymous-stream:${chatId}:*`;
+      ? `miami.ai-ai:stream:${chatId}:*`
+      : `miami.ai-ai:anonymous-stream:${chatId}:*`;
 
     const keys = await redisPublisher.keys(keyPattern);
     streamIds = keys

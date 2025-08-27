@@ -8,14 +8,14 @@ import { Toaster } from 'sonner';
 import { TRPCReactProvider } from '@/trpc/react';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sparka.ai'),
-  title: 'Sparka AI - AI for everyone, from everyone',
+  metadataBase: new URL('https://miami.ai.ai'),
+  title: 'Miami.ai AI - AI for everyone, from everyone',
   description:
     'Multi-provider AI Chat - access Claude, ChatGPT, Gemini, and Grok with advanced features, open-source and production-ready.',
   openGraph: {
-    siteName: 'Sparka AI',
-    url: 'https://sparka.ai',
-    title: 'Sparka AI - AI for everyone, from everyone',
+    siteName: 'Miami.ai AI',
+    url: 'https://miami.ai.ai',
+    title: 'Miami.ai AI - AI for everyone, from everyone',
     description:
       'Multi-provider AI Chat - access Claude, ChatGPT, Gemini, and Grok with advanced features, open-source and production-ready.',
   },
